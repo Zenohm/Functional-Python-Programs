@@ -1,0 +1,1 @@
+import ast; from urllib.request import urlopen; response = ast.literal_eval(urlopen('https://gender-api.com/get?key=PaqetHQfrjYbVsuezw&name={}'.format(input("Input a name. "))).read().decode());response

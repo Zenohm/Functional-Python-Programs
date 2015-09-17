@@ -1,0 +1,13 @@
+import urllib.request
+import json
+
+def gender(name):
+    name = str(name)
+    data = json.load(urllib.request.urlopen("https://gender-api.com/get?name=%s"%name))
+    print("Gender: " + data["gender"])
+    print("Confidence: ", data["accuracy"],'%')
+
+
+
+
+OUTDATED

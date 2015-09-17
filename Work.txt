@@ -1,0 +1,14 @@
+st = ''.join([p.replace('\n',' ') for p in open('p059_cipher.txt','r')]).split()
+stn = ''.join(st).split(',')
+for d in range(0,len(stn)):
+	chr(stn[d])
+for encrypted_digit in range(0,len(st)):
+	encrypted_binary_digits = ' '.join(format(ord(x), 'b') for x in st[encrypted_digit])
+encrypted_binary_digits = [p.replace('\n',' ') for p in encrypted_binary_digits.split()]
+def sxor(s1,s2):    
+    # convert strings to a list of character pair tuples
+    # go through each tuple, converting them to ASCII code (ord)
+    # perform exclusive or on the ASCII code
+    # then convert the result back to ASCII (chr)
+    # merge the resulting array of characters as a string
+    return ''.join(chr(ord(a) ^ ord(b)) for a,b in zip(s1,s2))
